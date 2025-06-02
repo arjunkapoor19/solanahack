@@ -9,14 +9,14 @@ const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className='w-full bg-blue-100 shadow-sm rounded-xl py-4 px-6 flex items-center justify-between z-50 relative'
+            className='w-full bg-gradient-to-r from-green-400/12 via-purple-500/12 to-white/12 shadow-sm rounded-xl py-4 px-6 flex items-center justify-between z-50 relative'
         >
             {/* Left: Logo */}
             <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className='font-bold text-lg text-black tracking-tight'
+                className='font-bold text-lg text-white tracking-tight'
             >
                 <Link href='/'>
                     De<span className='font-normal'>Compute</span>
@@ -28,7 +28,7 @@ const Header = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className='hidden md:flex space-x-8 font-medium text-black z-50'
+                className='hidden md:flex space-x-8 font-medium text-white z-50'
             >
                 <li>
                     <Link href='/features' className='hover:text-orange-600 transition'>

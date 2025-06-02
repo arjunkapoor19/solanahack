@@ -63,14 +63,14 @@ const ConvertCard = () => {
         variants={fadeInUp}
       >
         <div className='text-sm text-gray-300 mb-4'>Check Time</div>
-        <button className=' bg-blue-500 hover:bg-blue-600 px-4 py-1.5 rounded-full text-sm font-medium text-black'>
+        <button className=' bg-purple-500/25 hover:bg-purple-800 px-4 py-1.5 rounded-full text-sm font-medium text-white transition'>
           Click Me
         </button>
       </motion.div>
 
       {/* Submit Button */}
       <motion.button
-        className='w-full bg-blue-900 hover:bg-blue-800 hover:text-blue-200 transition text-blue-400 font-semibold py-3 rounded-2xl'
+        className='w-full bg-linear-to-r from-green-400/25 to-purple-500/25  hover:bg-purple-500/25 transition text-white font-semibold py-3 rounded-2xl'
         variants={fadeInUp}
       >
         Get started

@@ -77,7 +77,7 @@ export default function Home() {
     select-none
   "
 >
-  Check Time Need to Compute your Code
+  Check Time Needed to Compute your Code
 </h1>
     <ConvertCard />
   </div>
