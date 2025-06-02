@@ -68,7 +68,7 @@ export default function Home() {
   <div className="relative z-10 max-w-5xl mx-auto text-center pt-15 pb-20 px-4">
     <h1
   className="
-    text-5xl 
+    text-4xl 
     font-light 
     text-white
     mb-12
@@ -77,7 +77,7 @@ export default function Home() {
     select-none
   "
 >
-  Check Time Needed to Compute your Code
+  Run scripts, code, and compute tasks on a censorship-resistant, <br/> low-cost distributed network powered by Solana.
 </h1>
     <ConvertCard />
   </div>
