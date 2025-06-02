@@ -1,49 +1,67 @@
-"use client"
+'use client'
+import Link from 'next/link'
+import React from 'react'
+import { motion } from 'framer-motion'
 
-import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-
-  return (
-    <header className="w-full max-w-6xl mx-auto mb-12 px-4 md:px-0 mt-8">
-      <div className="flex justify-between items-center">
-        <Link href="/" className="text-xl font-semibold text-white">
-          DeCompute
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6 text-white text-sm md:text-base">
-          <Link href="#features" className="hover:text-gray-500 transition">
-            Features
-          </Link>
-          <Link href="/dashboard" className="hover:text-gray-500 transition">
-            Launch App
-          </Link>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-500"
-          onClick={() => setIsOpen(!isOpen)}
+const Header = () => {
+    return (
+        <motion.nav
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className='w-full bg-blue-100 shadow-sm rounded-xl py-4 px-6 flex items-center justify-between z-50 relative'
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+            {/* Left: Logo */}
+            <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+                className='font-bold text-lg text-black tracking-tight'
+            >
+                <Link href='/'>
+                    De<span className='font-normal'>Compute</span>
+                </Link>
+            </motion.div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <nav className="mt-4 flex flex-col space-y-2 text-white md:hidden">
-          <Link href="#features" className="hover:text-gray-500 transition" onClick={() => setIsOpen(false)}>
-            Features
-          </Link>
-          <Link href="/dashboard" className="hover:text-gray-500 transition" onClick={() => setIsOpen(false)}>
-            Launch App
-          </Link>
-        </nav>
-      )}
-    </header>
-  )
+            {/* Center: Navigation Links */}
+            <motion.ul
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className='hidden md:flex space-x-8 font-medium text-black z-50'
+            >
+                <li>
+                    <Link href='/features' className='hover:text-orange-600 transition'>
+                        Features
+                    </Link>
+                </li>
+                <li>
+                    <Link href='/developer' className='hover:text-orange-600 transition'>
+                        Developer
+                    </Link>
+                </li>
+                <li>
+                    <Link href='/cryptocurrencies' className='hover:text-orange-600 transition'>
+                        Cryptocurrencies
+                    </Link>
+                </li>
+            </motion.ul>
+
+            {/* Right: Button */}
+            <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+                className='z-50'
+            >
+                <Link href='https://www.google.com'>
+                    <button className='bg-black text-white text-sm px-5 py-2 rounded-full hover:bg-gray-800 transition  hover:cursor-pointer'>
+                        COMPUTE NOW
+                    </button>
+                </Link>
+            </motion.div>
+        </motion.nav>
+    )
 }
+
+export default Header

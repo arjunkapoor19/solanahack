@@ -6,8 +6,7 @@ import Image from "next/image"
 import Lenis from "@studio-freight/lenis"
 import { useTransform, useScroll, motion, MotionValue } from "framer-motion"
 import Header from "@/components/header"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import ConvertCard from "@/components/convert"
 
 const images = [
   "1.jpg", "2.jpg", "3.jpg",
@@ -55,7 +54,9 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+        <div className="p-5">
       <Header />
+        </div>
       <div className={styles.spacer}>
   <motion.div 
     className="absolute inset-0 bg-gradient-to-br from-green-400/12 via-purple-500/12 to-white/12 blur-2xl z-0"
@@ -64,51 +65,21 @@ export default function Home() {
     transition={{ duration: 1.5 }}
   />
 
-  <div className="relative z-10 max-w-5xl mx-auto text-center pt-28 pb-20 px-4">
-    <motion.h1 
-      className="text-4xl md:text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400"
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.6 }}
-    >
-      Powerful for developers.
-    </motion.h1>
-
-    <motion.h1 
-      className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-gray-100 to-white"
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.4, duration: 0.6 }}
-    >
-      Fast for everyone.
-    </motion.h1>
-
-    <motion.p 
-      className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
-      initial={{ y: 10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.6, duration: 0.6 }}
-    >
-      Run scripts, code, and compute tasks on a censorship-resistant, low-cost distributed network powered by Solana.
-    </motion.p>
-
-    <motion.div 
-      className="flex justify-center gap-4 flex-wrap"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.8, duration: 0.6 }}
-    >
-      <Link href="/dashboard">
-        <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/20">
-          Launch App
-        </Button>
-      </Link>
-      <Link href="#features">
-        <Button variant="outline" size="lg" className="border-gray-500 text-black hover:border-white">
-          Learn More
-        </Button>
-      </Link>
-    </motion.div>
+  <div className="relative z-10 max-w-5xl mx-auto text-center pt-15 pb-20 px-4">
+    <h1
+  className="
+    text-5xl 
+    font-light 
+    text-white
+    mb-12
+    tracking-tight
+    leading-tight
+    select-none
+  "
+>
+  Check Time Need to Compute your Code
+</h1>
+    <ConvertCard />
   </div>
 </div>
 
